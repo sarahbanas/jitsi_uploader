@@ -71,7 +71,7 @@ if [[ -z "$UPLOAD_TYPE" ]]; then
   echo 'INSERT INTO files (filename, file_sans_timestamp, final_path, file_size, date_created) VALUES ("'$FINAL_NAME'","'$ROOM_NAME'","'$FINAL_UPLOAD_PATH'","'$FILE_SIZE'","'$DATE_CREATED'");' | mysql -u $USERNAME -p$PASSWORD -h $SERVERNAME -D $DATABASE
   
   # move from temporary directory to the static jitsi directory
-  mv $VIDEO_FILE_PATH $STATIC_UPLOAD
+  mv $VIDEO_FILE_PATH $STATIC_UPLOAD_PATH
 
   echo "No upload type found, skipping upload..."
   exit 4
